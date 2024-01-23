@@ -1,0 +1,12 @@
+.vscode
+styles/base/*
+styles/components/*
+styles/layout/*
+styles/mixins/*
+styles/variables/*
+styles/main.scss
+main.css.map
+format.txt
+test.html
+node-modules/
+.env

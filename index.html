@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />    
+</head>
+
+<body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+  const themeButton = document.querySelector('.themeButton');
+
+  themeButton.addEventListener('click', function () {
+    themeButton.classList.toggle('animate');
+  });
+});
+
+    </script>
+    <header class="title-container">
+        <h3 class="title-text">
+            Instagram Reel Downloader
+        </h3>
+    </header>
+
+    <main>
+        <div class="themeButton">
+            <span class="sun material-symbols-outlined" id="darkModeButton">dark_mode</span>
+            <span class="moon material-symbols-outlined" id="lightModeButton">light_mode</span>
+        </div>
+        <section class="input-section">
+            <div class="input-container">
+                <p class="input-title"></p>
+                <!-- <form action="sendlink()" method="post"></form> -->
+                <input class="input-box" type="text" id="inputBox" placeholder="Enter or Paste your reel here">
+                <button  class="input-paste-button" type="button"><img src="./images/clipboard.png" alt="clipboard"></button>
+                <button id="inputDownloadButton" type="button" class="input-download-button" >Download!</button>
+            </div>
+        </section>
+        <section>
+            <div>
+                
+            </div>
+        </section>
+        <!-- <a href="#" id="link1">Link</Link></a> -->
+    </main>
+    <footer class="footer">
+        <div class="icons copyright">
+            <p><span><i class="fa-solid fa-copyright"></i></span> Kavan Bhavsar.</p>
+            <p>All rights reserved.</p>
+        </div>
+        <div class="icons github">
+            <a><span><i class="fa-brands fa-github"></i></span></a>
+        </div>
+        <div class="icons linkedin">
+            <a><span><i class="fa-brands fa-linkedin"></i></span></a>
+        </div>
+        <div class="icons instagram">
+            <a><span><i class="fa-brands fa-instagram"></i></span></a>
+        </div>
+        <div class="icons portfolio">
+            <a><span><i class="fa-brands fa-github"></i></span></a>
+        </div>
+      </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./script/main.js"></script>
+</body>
+
+</html>
