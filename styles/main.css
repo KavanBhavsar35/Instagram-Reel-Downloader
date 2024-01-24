@@ -10,8 +10,9 @@ body {
   background-color: #FFF;
   color: #333;
   transition: background-color 0.2s ease-in;
+  overflow-x: hidden;
   font-family: "Roboto Mono", monospace;
-  font-size: 16px;
+  font-size: 17px;
   height: 100dvh;
 }
 @media (prefers-color-scheme: dark) {
@@ -24,13 +25,19 @@ body[data-color-scheme=dark] {
   background-color: #141414;
   color: #FBFEF9;
 }
+body.disable-scroll {
+  overflow: hidden;
+}
 body[data-color-scheme=light] {
   background-color: #FFF;
   color: #333;
 }
+body button:hover, body i:hover {
+  cursor: pointer;
+}
 
 .title-container {
-  height: 16dvh;
+  height: 10vh;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -40,7 +47,6 @@ body[data-color-scheme=light] {
   position: sticky;
   border-radius: 0 0 0.3em 0.3em;
   border-bottom: 3px solid #991E56;
-  border-bottom: 3px solid #F7B32B;
   transition: background-color 0.2s ease-in;
 }
 body[data-color-scheme=light] .title-container {
@@ -54,12 +60,37 @@ body[data-color-scheme=light] .title-container {
   background-size: cover;
   width: 100%;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   line-height: 1.2em;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
+}
+@media ((min-width: 576px) and (max-width: 767.98px)) {
+  .title-container .title-text {
+    font-size: 2rem;
+  }
+}
+@media ((min-width: 768px) and (max-width: 991.98px)) {
+  .title-container .title-text {
+    font-size: 2.3rem;
+  }
+}
+@media ((min-width: 992px) and (max-width: 1199.98px)) {
+  .title-container .title-text {
+    font-size: 2.3rem;
+  }
+}
+@media ((min-width: 1200px) and (max-width: 1399.98px)) {
+  .title-container .title-text {
+    font-size: 2.3rem;
+  }
+}
+@media (min-width: 1400px) {
+  .title-container .title-text {
+    font-size: 2.3rem;
+  }
 }
 
 .footer {
@@ -69,10 +100,11 @@ body[data-color-scheme=light] .title-container {
   gap: 2px 0px;
   grid-auto-flow: row;
   grid-template-areas: "copyright copyright copyright copyright" "github linkedin instagram portfolio";
+  position: relative;
   justify-items: center;
   align-items: end;
   bottom: 0;
-  height: 10dvh;
+  height: 8vh;
   width: 100%;
   background-color: #F7B32B;
   color: #333;
@@ -82,12 +114,30 @@ body[data-color-scheme=light] .title-container {
 .footer .icons {
   padding: 0rem 1rem;
 }
+@media ((min-width: 576px) and (max-width: 767.98px)) {
+  .footer .icons {
+    font-size: 1rem;
+  }
+}
+@media ((min-width: 576px) and (max-width: 767.98px)) {
+  .footer .icons {
+    padding-bottom: 5px;
+  }
+  .footer .icons i::before {
+    width: 30;
+    height: 30;
+  }
+}
 .footer .copyright {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-wrap: wrap;
   grid-area: copyright;
+}
+.footer .copyright .fa-copyright {
+  cursor: text;
 }
 .footer .github {
   grid-area: github;
@@ -103,12 +153,12 @@ body[data-color-scheme=light] .title-container {
 }
 
 .input-section {
-  min-width: 100vw;
+  width: 100%;
   position: relative;
-  height: calc(74dvh - 2rem);
+  height: calc(100dvh - 10vh - 8vh - 2rem);
   display: flex;
   align-items: center;
-  justify-content: stretch;
+  justify-content: center;
 }
 .input-section .input-container {
   position: relative;
@@ -121,8 +171,38 @@ body[data-color-scheme=light] .title-container {
   gap: 2px 0px;
   grid-auto-flow: row;
   grid-template-areas: "input-box input-paste-button" "input-download-button input-download-button";
-  height: 10em;
+  height: 10rem;
   margin: 0 1.3em;
+}
+@media (max-width: 575.98px) {
+  .input-section .input-container {
+    max-width: 20rem;
+  }
+}
+@media ((min-width: 576px) and (max-width: 767.98px)) {
+  .input-section .input-container {
+    max-width: 28rem;
+  }
+}
+@media ((min-width: 768px) and (max-width: 991.98px)) {
+  .input-section .input-container {
+    max-width: 36rem;
+  }
+}
+@media ((min-width: 992px) and (max-width: 1199.98px)) {
+  .input-section .input-container {
+    max-width: 42rem;
+  }
+}
+@media ((min-width: 1200px) and (max-width: 1399.98px)) {
+  .input-section .input-container {
+    max-width: 45rem;
+  }
+}
+@media (min-width: 1400px) {
+  .input-section .input-container {
+    max-width: 47rem;
+  }
 }
 .input-section .input-container .input-box {
   display: flex;
@@ -143,6 +223,7 @@ body[data-color-scheme=light] .title-container {
   font-size: 1.05rem;
   text-wrap: wrap;
   text-align: justify;
+  text-align: center;
   -moz-transition: background-color 0.2s ease-in;
   transition: background-color 0.2s ease-in;
 }
@@ -152,7 +233,22 @@ body[data-color-scheme=light] .title-container {
   font-size: 1.05rem;
   text-wrap: wrap;
   text-align: justify;
+  text-align: center;
   transition: background-color 0.2s ease-in;
+}
+@media (max-width: 575.98px) {
+  .input-section .input-container .input-box::-moz-placeholder {
+    position: relative;
+    top: -10px;
+    padding: 0px;
+    font-size: 1rem;
+  }
+  .input-section .input-container .input-box::placeholder {
+    position: relative;
+    top: -10px;
+    padding: 0px;
+    font-size: 1rem;
+  }
 }
 body[data-color-scheme=light] .input-section .input-container .input-box {
   background-color: #FFF;
@@ -195,21 +291,29 @@ body[data-color-scheme=light] .input-section .input-container .input-box::placeh
   background-color: #991E56;
 }
 
-.themeButton {
+.theme-button-container {
   height: 2rem;
   font-size: 1.4rem;
   display: flex;
   justify-content: flex-end;
 }
-.themeButton.animate .sun, .themeButton.animate .moon {
-  transition: transform 0.3s ease;
+.theme-button-container .theme-button {
   padding: 1rem;
+  animation-name: rotateInDownRight;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-fill-mode: forwards;
 }
-@keyframes move {
+
+@keyframes rotateInDownRight {
   0% {
-    transform: rotate(0deg) translateX(50px) rotate(0deg);
+    transform-origin: right bottom;
+    transform: rotate3d(0, 0, 1, 45deg);
+    opacity: 0;
   }
   100% {
-    transform: rotate(360deg) translateX(50px) rotate(-360deg);
+    transform-origin: right bottom;
+    transform: none;
+    opacity: 1;
   }
 }/*# sourceMappingURL=main.css.map */

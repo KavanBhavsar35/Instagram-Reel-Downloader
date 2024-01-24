@@ -13,16 +13,6 @@
 
 <body>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-  const themeButton = document.querySelector('.themeButton');
-
-  themeButton.addEventListener('click', function () {
-    themeButton.classList.toggle('animate');
-  });
-});
-
-    </script>
     <header class="title-container">
         <h3 class="title-text">
             Instagram Reel Downloader
@@ -30,9 +20,9 @@
     </header>
 
     <main>
-        <div class="themeButton">
-            <span class="sun material-symbols-outlined" id="darkModeButton">dark_mode</span>
-            <span class="moon material-symbols-outlined" id="lightModeButton">light_mode</span>
+        <div class="theme-button-container">
+            <i><span id="darkModeButton" class="theme-button material-symbols-outlined" >dark_mode</span></i>
+            <i><span id="lightModeButton" class="theme-button material-symbols-outlined" >light_mode</span></i>
         </div>
         <section class="input-section">
             <div class="input-container">
@@ -52,8 +42,7 @@
     </main>
     <footer class="footer">
         <div class="icons copyright">
-            <p><span><i class="fa-solid fa-copyright"></i></span> Kavan Bhavsar.</p>
-            <p>All rights reserved.</p>
+            <p><span><i class="fa-solid fa-copyright"></i></span> Kavan Bhavsar. All rights reserved.</p>
         </div>
         <div class="icons github">
             <a><span><i class="fa-brands fa-github"></i></span></a>
@@ -69,6 +58,7 @@
         </div>
       </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./script/copyButton.js"></script>
     <script src="./script/main.js"></script>
 </body>
 
