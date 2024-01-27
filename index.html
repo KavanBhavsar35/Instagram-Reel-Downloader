@@ -27,23 +27,37 @@
             <i><span id="darkModeButton" class="theme-button material-symbols-outlined" >dark_mode</span></i>
             <i><span id="lightModeButton" class="theme-button material-symbols-outlined" >light_mode</span></i>
         </div>
-        <section class="input-section">
-            <div class="input-container">
+        <section id="inputSection" class="input-section">
+            <div class="input-container" id="inputContainer">
                 <p class="input-title"></p>
-                <!-- <form action="sendlink()" method="post"></form> -->
                 <input class="input-box" type="text" id="inputBox" placeholder="Enter or Paste your reel here">
                 <button id="inputPasteButton" class="input-paste-button" type="button"><img src="./images/clipboard.png" alt="clipboard"></button>
                 <button id="inputDownloadButton" type="button" class="input-download-button" >Download!</button>
             </div>
         </section>
-        <section>
-            <div>
-                
+        <section class="result-container">
+            <div class="result-wrapper">
+                <span id="loader" class="loader"></span>
+                <div class="result-slider" id="resultSlider">
+                    <!-- <video class="result-video" src="" poster=""></video> -->
+                    <video id="resultVideo1" class="result-video" src="./images/test.mp4" poster="./images/test-poster.jpg" disablepictureinpicture></video>
+                    <video id="resultVideo2" class="result-video" src="./images/test.mp4" poster="./images/test-poster.jpg" disablepictureinpicture></video>
+                    <video id="resultVideo3" class="result-video" src="./images/test.mp4" poster="./images/test-poster.jpg" disablepictureinpicture></video>
+                </div>
+                <div class="slider-nav">
+                    <a href="#resultVideo1" active></a>
+                    <a href="#resultVideo2"></a>
+                    <a href="#resultVideo3"></a>
+                </div>
+            </div>
+            <div class="button-group">
+                <button class="download-button">Download</button>
+                <button class="download-all">Download All</button>
+                <button class="download-again">Download Again</button>
             </div>
         </section>
-        <!-- <a href="#" id="link1">Link</Link></a> -->
     </main>
-    <footer class="footer">
+    <!-- <footer class="footer">
         <div class="icons copyright">
             <p><span><i class="fa-solid fa-copyright"></i></span> Kavan Bhavsar. All rights reserved.</p>
         </div>
@@ -59,11 +73,10 @@
         <div class="icons portfolio">
             <a><span><i class="fa-brands fa-github"></i></span></a>
         </div>
-      </footer>
+      </footer> -->
     <script src="./script/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-    <!-- <script src="./scr ipt/utils/localStorage.js"></script> -->
 </body>
 
 </html>
