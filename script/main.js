@@ -85,15 +85,21 @@ document.addEventListener('DOMContentLoaded', function () {
     let options = {
       method: 'GET',
       headers: {
-        // 'X-RapidAPI-Key': 'a8328de202msh554a03f011a90c3p1d7cfcjsn3c89ba0db308',  //kvbhavsar35
-        'X-RapidAPI-Key': '60dbc0b92fmsh648a522ca6c84fdp1a8267jsn8f948c32ca41', //kavan0305
+        'X-RapidAPI-Key': 'myApiKey',
 
         'X-RapidAPI-Host': 'instagram-downloader.p.rapidapi.com'
       }
     };
+    document.getElementById('inputSection').style.marginBottom='7vh'
+
     loader.style.display = 'block'
     let result;
     try {
+      setTimeout(() => {
+        loader.style.display = 'none'
+        document.getElementById('resultWrapper').setAttribute('data-display','visible')
+        // document.getElementById('inputSection').style.display='none';
+      }, 3000);
       // let response = await fetch(url, options);
       // let result = await response.text();
       // console.table(result);
@@ -144,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } catch (error) {
       console.error(error);
     } finally {
-      loader.style.display = 'none'
+      
     }
   });
   inputPasteButton.addEventListener('click', function () {

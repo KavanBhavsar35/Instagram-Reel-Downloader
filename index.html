@@ -29,15 +29,15 @@
         </div>
         <section id="inputSection" class="input-section">
             <div class="input-container" id="inputContainer">
-                <p class="input-title"></p>
+                <p class="input-title">(under development..press download now button to see demo)</p>
                 <input class="input-box" type="text" id="inputBox" placeholder="Enter or Paste your reel here">
                 <button id="inputPasteButton" class="input-paste-button" type="button"><img src="./images/clipboard.png" alt="clipboard"></button>
                 <button id="inputDownloadButton" type="button" class="input-download-button" >Download!</button>
             </div>
         </section>
         <section class="result-container">
-            <div class="result-wrapper">
-                <span id="loader" class="loader"></span>
+            <span id="loader" class="loader"></span>
+            <div class="result-wrapper" id="resultWrapper" data-display="none">
                 <div class="result-slider" id="resultSlider">
                     <!-- <video class="result-video" src="" poster=""></video> -->
                     <video id="resultVideo1" class="result-video" src="./images/test.mp4" poster="./images/test-poster.jpg" disablepictureinpicture></video>
@@ -49,15 +49,15 @@
                     <a href="#resultVideo2"></a>
                     <a href="#resultVideo3"></a>
                 </div>
-            </div>
-            <div class="button-group">
-                <button class="download-button">Download</button>
-                <button class="download-all">Download All</button>
-                <button class="download-again">Download Again</button>
+                <div class="button-group">
+                    <button class="download-button">Download</button>
+                    <button class="download-all">Download All</button>
+                    <button class="download-again">Download Again</button>
+                </div>
             </div>
         </section>
     </main>
-    <!-- <footer class="footer">
+    <footer class="footer">
         <div class="icons copyright">
             <p><span><i class="fa-solid fa-copyright"></i></span> Kavan Bhavsar. All rights reserved.</p>
         </div>
@@ -73,7 +73,7 @@
         <div class="icons portfolio">
             <a><span><i class="fa-brands fa-github"></i></span></a>
         </div>
-      </footer> -->
+      </footer>
     <script src="./script/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>

@@ -100,10 +100,10 @@ body[data-color-scheme=light] .title-container {
   gap: 2px 0px;
   grid-auto-flow: row;
   grid-template-areas: "copyright copyright copyright copyright" "github linkedin instagram portfolio";
-  position: relative;
   justify-items: center;
   align-items: end;
   bottom: 0;
+  margin-top: 30vh;
   height: 8vh;
   width: 100%;
   background-color: #F7B32B;
@@ -159,6 +159,8 @@ body[data-color-scheme=light] .title-container {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 60vh;
+  margin-bottom: 40vh;
 }
 .input-section .input-container {
   position: relative;
@@ -171,7 +173,7 @@ body[data-color-scheme=light] .title-container {
   gap: 2px 0px;
   grid-auto-flow: row;
   grid-template-areas: "input-box input-paste-button" "input-download-button input-download-button";
-  height: 10rem;
+  height: 14rem;
   margin: 0 1.3em;
 }
 @media (max-width: 575.98px) {
@@ -324,16 +326,16 @@ body[data-color-scheme=light] .input-section .input-container .input-box::placeh
   flex-direction: column;
   gap: 2px;
   align-items: center;
-  height: 80vh;
+  max-height: 80vh;
   width: 100%;
 }
-.result-container .result-wrapper {
+.result-container .result-wrapper[data-display=visible] {
   position: relative;
   max-width: 17rem;
   height: -moz-max-content;
   height: max-content;
 }
-.result-container .result-wrapper .result-slider {
+.result-container .result-wrapper[data-display=visible] .result-slider {
   display: flex;
   aspect-ratio: 9/16;
   overflow-x: auto;
@@ -341,40 +343,44 @@ body[data-color-scheme=light] .input-section .input-container .input-box::placeh
   scroll-behavior: smooth;
   box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
 }
-.result-container .result-wrapper .result-slider video, .result-container .result-wrapper .result-slider img {
+.result-container .result-wrapper[data-display=visible] .result-slider video, .result-container .result-wrapper[data-display=visible] .result-slider img {
   flex: 1 0 100%;
   scroll-snap-align: start;
   border-radius: 0.5rem;
 }
-.result-container .result-wrapper .result-slider video {
+.result-container .result-wrapper[data-display=visible] .result-slider video {
   width: 16.5rem;
   aspect-ratio: 9/16;
 }
-.result-container .result-wrapper .result-slider img {
+.result-container .result-wrapper[data-display=visible] .result-slider img {
   max-width: 16.5rem;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.result-container .result-wrapper .result-slider::-webkit-scrollbar {
+.result-container .result-wrapper[data-display=visible] .result-slider::-webkit-scrollbar {
   display: none;
 }
-.result-container .result-wrapper .slider-nav {
+.result-container .result-wrapper[data-display=visible] .slider-nav {
   display: flex;
   -moz-column-gap: 1rem;
        column-gap: 1rem;
   position: absolute;
-  bottom: 1.25rem;
+  bottom: 6.25rem;
   left: 50%;
   transform: translateX(-50%);
 }
-.result-container .result-wrapper .slider-nav a {
+.result-container .result-wrapper[data-display=visible] .slider-nav a {
   height: 0.5rem;
   width: 0.5rem;
   border-radius: 50%;
   background-color: #c1bab9;
 }
-.result-container .result-wrapper .slider-nav a[active] {
+.result-container .result-wrapper[data-display=visible] .slider-nav a[active] {
   background-color: #FFF;
+}
+.result-container .result-wrapper[data-display=none] {
+  position: relative;
+  display: none;
 }
 .result-container .button-group {
   display: flex;
@@ -427,6 +433,8 @@ body[data-color-scheme=light] .input-section .input-container .input-box::placeh
 
 .loader {
   display: none;
+  position: relative;
+  top: -40px;
   color: #FFF;
   font-size: 7px;
   position: relative;
